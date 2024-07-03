@@ -1,12 +1,12 @@
 const { meters } = require("../meters/meters");
 
 const generateSingle = () => {
-    const startTime = 1607686125; // Friday, 11 December 2020 11:28:45 GMT+00:00
+    const startTime = new Date().getTime();
     const hour = 3600;
     const readingsLength = Math.ceil(Math.random() * 20);
 
     return [...new Array(readingsLength)].map((reading, index) => ({
-        time: startTime - index * hour,
+        time: startTime - index * hour * 24 * 1000,
         reading: Math.random() * 2,
     }));
 };
